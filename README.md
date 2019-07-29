@@ -7,7 +7,7 @@ Maak een clone van deze repo en zet een webapplicatie op met een multiple-select
 * Svg van zoek-icon
 
 ## Requirements:
-* Toon de multi-selector met de JSON als opties
+* Toon de multi-selector met de JSON als opties (haal de JSON met http op)
 * Maak een zoekfunctie dat frontend filtering doet op de input
 * Meerdere resultaten kunnen tegelijk geselecteerd worden
 * Geselecteerde items komen bovenin de lijst te staan en worden niet gefilterd
