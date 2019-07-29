@@ -8,7 +8,7 @@ Create a clone of this repo and setup a webapp wich a multiple-select-filter. Se
 * Search-icon (svg)
 
 ## Requirements:
-* Show the multi-select and fill it with the given JSON data
+* Show the multi-select and fill it with the given JSON data using http
 * Create a search which can filter the JSON data
 * Make it possible to select multiple items
 * Selected items need to be ordered on top, also they should not be affected by the search filter
