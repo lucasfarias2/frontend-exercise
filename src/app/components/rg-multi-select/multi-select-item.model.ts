@@ -9,7 +9,7 @@ export class MultiSelectItem {
 
     public get order(): number 
     {
-        return this._order + (this.isSelected ? 99999999 : 0);
+        return this._order + (this.isSelected ? Number.MAX_VALUE : 0);
     }
 
     value: string;

@@ -15,7 +15,7 @@ export class CategoriesPageComponent implements OnInit {
     constructor(private route: ActivatedRoute) { }
 
     ngOnInit(): void {
-        let orderCount = 0;
+        let orderCount = Number.MIN_VALUE;
         const lsCategories = localStorage.getItem(this.LS_SELECTED_CATEGORIES_KEY);
         const selectedCategories: string[] = lsCategories ? JSON.parse(lsCategories) : [];
 
