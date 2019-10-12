@@ -1,0 +1,47 @@
+@import "../variables.scss";
+.toolbar {
+    height: $toolbar-height;
+    display: flex;
+    align-items: center;
+    background-color: $toolbar-background-color;
+    color: white;
+    font-weight: 400;
+}
+
+.toolbar img {
+    margin: 0 16px;
+}
+
+.content {
+    margin-top: $content-margin-top;
+    display: grid;
+    place-items: center;
+}
+
+
+/* Responsive Styles */
+
+@media screen and (max-width: 767px) {
+    .card-container>*:not(.circle-link),
+    .terminal {
+        width: 100%;
+    }
+    .card:not(.highlight-card) {
+        height: 16px;
+        margin: 8px 0;
+    }
+    .card.highlight-card span {
+        margin-left: 72px;
+    }
+    svg#rocket-smoke {
+        right: 120px;
+        transform: rotate(-5deg);
+    }
+}
+
+@media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+        display: none;
+        visibility: hidden;
+    }
+}

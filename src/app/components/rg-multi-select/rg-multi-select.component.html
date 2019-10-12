@@ -1,0 +1,34 @@
+<div class="multi-select-container">
+
+  <div>
+    <span>{{title}}</span>
+    <form class="example-form">
+      <mat-form-field>
+        <input class="search-input browser-default" matInput placeholder="{{searchPlaceholder}}" value=""
+          (input)="onSearchChange($event.target.value)">
+        <a href="#" class="search-icon">
+
+          <img class="search-icon" src="assets/search.svg" alt="{{searchPlaceholder}}">
+        </a>
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="list">
+    <mat-selection-list *ngIf="filteredItems.length > 0;else no_results_content"
+      (selectionChange)="onSelectionChange($event)">
+      <mat-list-option *ngFor="let item of filteredItems" checkboxPosition="before" value={{item.value}} [selected]="item.isSelected">
+        {{item.value}}
+      </mat-list-option>
+    </mat-selection-list>
+    <ng-template #no_results_content class="no-results">
+      <div class="no-results">
+        {{noResultsText}}
+      </div>
+    </ng-template>
+  </div>
+  <div class="button-container">
+    <a href="#" mat-raised-button primary color="primary" style="width:100%;"
+      (click)="applyFilter()">{{applyButtonText}}</a>
+  </div>
+
+</div>

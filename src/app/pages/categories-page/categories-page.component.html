@@ -1,0 +1,9 @@
+<div class="categories-filter">
+  <rg-multi-select 
+  [title]="'ProductGroep'" 
+  [searchPlaceholder]="'Zoek op ...'"
+  [applyButtonText]="'Toepassen'"
+  [noResultsText]="'Geen resultaten gevonden...'"
+  [items]="items" 
+  (onApplyFilterButtonClick)="savePreferences($event)"></rg-multi-select>
+</div>

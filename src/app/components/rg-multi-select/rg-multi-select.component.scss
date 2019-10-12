@@ -1,0 +1,35 @@
+@import "../../../variables.scss";
+mat-selection-list {
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+mat-form-field {
+    display: inline;
+    font-size: 16px;
+}
+
+.list {
+    height: calc(100vh - #{$content-margin-top} - #{$toolbar-height} - #{$height-offset});
+    max-height: 500px;
+    min-height: 150px;
+    overflow-y: auto;
+}
+
+.search-icon {
+    position: absolute;
+    right: 5px;
+    margin-top: 0px;
+}
+
+.search-input {
+    width: calc(100% - 30px) !important;
+}
+
+.button-container {
+    margin-top: 10px;
+}
+
+.no-results {
+    text-align: center;
+}
