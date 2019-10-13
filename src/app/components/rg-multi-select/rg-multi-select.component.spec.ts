@@ -48,8 +48,8 @@ describe('RgMultiSelectComponent', () => {
         const expected = [
             
             new MultiSelectItem('Test 2', true, 1),
-            new MultiSelectItem('Test 3', false, 2),
             new MultiSelectItem('Test 1', false, 0),
+            new MultiSelectItem('Test 3', false, 2),
         ];
         component.items = dummyItems;
         fixture.detectChanges();

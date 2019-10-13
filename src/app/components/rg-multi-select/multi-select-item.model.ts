@@ -9,13 +9,10 @@ export class MultiSelectItem {
 
     public get order(): number 
     {
-        return this._order + (this.isSelected ? Number.MAX_VALUE : 0);
+        return this._order - (this.isSelected ? Number.MAX_VALUE : 0);
     }
 
-    value: string;
-    isSelected: boolean;
-
-    constructor(value: string, isSelected: boolean, order: number)
+    constructor(public value: string, public isSelected: boolean, order: number)
     {
         this.value = value;
         this.isSelected = isSelected;

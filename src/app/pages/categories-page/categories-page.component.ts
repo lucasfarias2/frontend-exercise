@@ -15,13 +15,13 @@ export class CategoriesPageComponent implements OnInit {
     constructor(private route: ActivatedRoute) { }
 
     ngOnInit(): void {
-        let orderCount = Number.MIN_VALUE;
+        let orderCount = Number.MAX_VALUE;
         const lsCategories = localStorage.getItem(this.LS_SELECTED_CATEGORIES_KEY);
         const selectedCategories: string[] = lsCategories ? JSON.parse(lsCategories) : [];
 
         this.items = this.route.snapshot.data['categories'].map(a => {
             const isSelected = selectedCategories.indexOf(a) >= 0;
-            return new MultiSelectItem(a, isSelected, orderCount++);
+            return new MultiSelectItem(a, isSelected, orderCount--);
         });
     }
 

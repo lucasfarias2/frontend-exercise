@@ -42,7 +42,7 @@ export class RgMultiSelectComponent implements OnInit {
      * Sort items in a descending order.
      */
     private sortItems() {
-        this.filteredItems.sort((a, b) => b.order - a.order);
+        this.filteredItems.sort((a, b) => a.order - b.order);
     }
 
     /**
