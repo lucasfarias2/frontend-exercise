@@ -1,32 +1,37 @@
-## Opdracht: 
-Maak een clone van deze repo en zet een webapplicatie op met een multiple-select-filter. Zie details hieronder. We willen zien hoe je een webapplicatie opzet en of je weloverwogen technische beslissingen kan maken. 
+# frontend-exercise
 
-## Gegeven:
-* JSON file met inhoud voor multi-select (470 items)
-* Design van multi-select
-* Svg van zoek-icon
+Front-end exercise for bol.com
 
-## Requirements:
-* Toon de multi-selector met de JSON als opties (haal de JSON met http op)
-* Maak een zoekfunctie dat frontend filtering doet op de input
-* Meerdere resultaten kunnen tegelijk geselecteerd worden
-* Geselecteerde items komen bovenin de lijst te staan en worden niet gefilterd
-* Bonus: Gebruiker kan door op een knop te klikken de data lokaal opslaan (de data wordt op page refresh opnieuw geladen)
+## Stack information
 
-## Belangrijkste challenge punten:
-* gestructureerde HTML/CSS/Javascript
-* JS architectuur (bijvoorbeeld MVC pattern)
-* HTTP/REST
-* ES6 / TypeScript
+- Node 12.10.0 (use nvm)
+- React
+- Express
+- Typescript
+- Webpack
+- TSLint
+- Prettier
+- Yarn
 
-## Optionele challengepunten:
-* Advanced css (Less/Sass/Responsive/?)
-* Opzetten build street (npm/gulp/webpack/?)
-* Data storage
+## Scaffolding information
 
-## Requirements:
-* Gebruik gestructureerde code (common practices/coding patterns)
-* Het product hoeft niet af te zijn, als het maar voldoende inzicht geeft in het technisch niveau. Daarbij helpt het uiteraard wel als een deel van de code functioneert
-* Je kan een framework (React, AngularJs) gebruiken waar je vertrouwd mee bent, maar je kan ons ook laten zien dat je begrijpt hoe Javascript werkt en patterns die in frameworks worden gebruikt kan reproduceren door VanillaJS te gebruiken (pré)
-* Gebruik Typescript of ES6 (pré)
-* Werken met TDD of BDD (pré)
+- `./build` -> Server side bundles files
+
+## Development guide
+
+1. `git clone` the repository
+2. Run `nvm use` to set the default project nodejs version
+3. Run `yarn` or `npm i` to download the projects dependencies
+4. Run `yarn build` to build the assets
+5. Run `yarn start` to start the server on port 8080
+6. Access the application at `http://localhost:8080`
+
+
+TODO:
+- check sourcemaps
+- ssr 
+- clean dependencies to dev dependencies
+- fetching from local api
+- remove remaining "any" types
+- remove ts ignores
+- add unit tests for reducers, actions, components, utils, etc
