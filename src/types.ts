@@ -18,6 +18,7 @@ declare global {
 
   export interface IInitialState {
     data: string[];
+    selectedItems: string[];
   }
 
   export interface IComponent {
@@ -29,6 +30,6 @@ declare global {
 
   export interface IAction {
     type: string;
-    payload: object;
+    payload: { item: string };
   }
 }

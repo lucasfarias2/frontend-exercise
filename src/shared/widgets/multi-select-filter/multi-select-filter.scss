@@ -1,7 +1,7 @@
 .#{$app-prefix}__multi-select-filter {
   &__title {
     font-size: 24px;
-    font-weight: 300;
+    font-weight: 400;
     margin-top: 0;
   }
 
@@ -18,6 +18,11 @@
       margin: 0;
     }
 
+    &__item:hover {
+      cursor: pointer;
+      color: #3264cd;
+    }
+
     &__item {
       display: flex;
       margin: 16px 0;
@@ -32,6 +37,11 @@
         border: 1px solid #d3d2ce;
         height: 18px;
         width: 18px;
+      }
+
+      &__checkbox--selected {
+        background-color: #3264cd;
+        border: 2px solid #fff inset;
       }
     }
   }
