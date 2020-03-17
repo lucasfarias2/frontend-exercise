@@ -29,10 +29,9 @@ Front-end exercise for bol.com
 
 TODO:
 - check sourcemaps
-- ssr 
 - clean dependencies to dev dependencies
-- fetching from local api
 - remove remaining "any" types
 - remove ts ignores
 - add unit tests for reducers, actions, components, utils, etc
 - unify css to variables
+- filter from input

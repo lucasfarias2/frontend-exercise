@@ -20,15 +20,27 @@ const MultiSelectFilter = ({ data, getSelectedItems, removeItem, selectedItems, 
         <p className={`${namespace}__subtitle`}>Product group</p>
         <Input icon={<IconSearch />} placeholder="Search..." />
         <div className={`${namespace}__items`}>
+          {selectedItems.map((item: string) => {
+            return (
+              <div className={`${namespace}__items__item`} key={item} onClick={() => removeItem(item)}>
+                <div
+                  className={classNames(
+                    `${namespace}__items__item__checkbox`,
+                    `${namespace}__items__item__checkbox--selected`
+                  )}
+                />
+                <span
+                  className={classNames(`${namespace}__items__item__text`, `${namespace}__items__item__text--selected`)}
+                >
+                  {renderHtml(item)}
+                </span>
+              </div>
+            );
+          })}
           {data.map((item: string) => {
-            const isSelected = selectedItems.find(selectedItem => selectedItem === item);
             return (
               <div className={`${namespace}__items__item`} key={item} onClick={() => selectItem(item)}>
-                <div
-                  className={classNames(`${namespace}__items__item__checkbox`, {
-                    [`${namespace}__items__item__checkbox--selected`]: isSelected,
-                  })}
-                />
+                <div className={classNames(`${namespace}__items__item__checkbox`)} />
                 <span className={`${namespace}__items__item__text`}>{renderHtml(item)}</span>
               </div>
             );
