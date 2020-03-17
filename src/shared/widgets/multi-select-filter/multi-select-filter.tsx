@@ -8,7 +8,11 @@ import renderHtml from '../../utils/render-html';
 
 const namespace = 'app__multi-select-filter';
 
-const MultiSelectFilter = ({ data, selectedItems, toggleItem }: IMultiSelectFilter) => {
+const MultiSelectFilter = ({ data, getSelectedItems, removeItem, selectedItems, selectItem }: IMultiSelectFilter) => {
+  React.useEffect(() => {
+    getSelectedItems();
+  }, []);
+
   return (
     <div className={namespace}>
       <h2 className={`${namespace}__title`}>Multi-Select Filter</h2>
@@ -19,7 +23,7 @@ const MultiSelectFilter = ({ data, selectedItems, toggleItem }: IMultiSelectFilt
           {data.map((item: string) => {
             const isSelected = selectedItems.find(selectedItem => selectedItem === item);
             return (
-              <div className={`${namespace}__items__item`} key={item} onClick={() => toggleItem(item)}>
+              <div className={`${namespace}__items__item`} key={item} onClick={() => selectItem(item)}>
                 <div
                   className={classNames(`${namespace}__items__item__checkbox`, {
                     [`${namespace}__items__item__checkbox--selected`]: isSelected,
@@ -39,7 +43,9 @@ const MultiSelectFilter = ({ data, selectedItems, toggleItem }: IMultiSelectFilt
 interface IMultiSelectFilter {
   data: string[];
   selectedItems: string[];
-  toggleItem?: (item: string) => {};
+  selectItem?: (item: string) => {};
+  removeItem?: (item: string) => {};
+  getSelectedItems?: () => {};
 }
 
 export default MultiSelectFilter;
