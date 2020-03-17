@@ -35,3 +35,4 @@ TODO:
 - add unit tests for reducers, actions, components, utils, etc
 - unify css to variables
 - filter from input
+- check browsers and production ready

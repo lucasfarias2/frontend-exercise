@@ -37,14 +37,16 @@ const MultiSelectFilter = ({ data, getSelectedItems, removeItem, selectedItems, 
               </div>
             );
           })}
-          {data.map((item: string) => {
-            return (
-              <div className={`${namespace}__items__item`} key={item} onClick={() => selectItem(item)}>
-                <div className={classNames(`${namespace}__items__item__checkbox`)} />
-                <span className={`${namespace}__items__item__text`}>{renderHtml(item)}</span>
-              </div>
-            );
-          })}
+          {data
+            .filter(item => !selectedItems.includes(item))
+            .map((item: string) => {
+              return (
+                <div className={`${namespace}__items__item`} key={item} onClick={() => selectItem(item)}>
+                  <div className={classNames(`${namespace}__items__item__checkbox`)} />
+                  <span className={`${namespace}__items__item__text`}>{renderHtml(item)}</span>
+                </div>
+              );
+            })}
         </div>
         <Button>Apply</Button>
       </Card>
