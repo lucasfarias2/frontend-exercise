@@ -35,3 +35,4 @@ TODO:
 - remove remaining "any" types
 - remove ts ignores
 - add unit tests for reducers, actions, components, utils, etc
+- unify css to variables

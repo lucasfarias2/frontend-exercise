@@ -14,7 +14,7 @@ const App = ({ children, deviceType, initialState }: IComponent) => {
       })}`}</Script>
       <Style src={`app.${deviceType}`} />
       <Script src={`app.${deviceType}`} />
-      {children}
+      <section className="app">{children}</section>
     </Provider>
   );
 };

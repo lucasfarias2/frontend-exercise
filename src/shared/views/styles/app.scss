@@ -1,4 +1,10 @@
-body {
-  background-color: #f7f7f8;
+@import '../variables';
+
+@import '../../controls/card/card';
+@import '../../controls/input/input';
+
+@import '../../widgets/multi-select-filter/multi-select-filter';
+
+* {
   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
 }

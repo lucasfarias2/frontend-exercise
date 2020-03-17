@@ -3,3 +3,9 @@
 body {
   padding: 16px;
 }
+
+.#{$app-prefix} {
+  &__multi-select-filter {
+    width: 100%;
+  }
+}

@@ -1,0 +1,30 @@
+.#{$ui-prefix}__input {
+  position: relative;
+
+  &__bar {
+    border: 1px solid #d3d2ce;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #313131;
+    font-size: 18px;
+    font-weight: 400;
+    height: 38px;
+    outline: none;
+    padding: 0 24px 0 12px;
+    width: 100%;
+  }
+
+  &__icon {
+    position: absolute;
+    right: 0;
+    right: 12px;
+    height: 100%;
+
+    svg {
+      fill: #646360;
+      height: 100%;
+      vertical-align: middle;
+      width: 16px;
+    }
+  }
+}
