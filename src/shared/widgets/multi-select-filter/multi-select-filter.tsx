@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '../../controls/card/card';
 import Input from '../../controls/input/input';
+import Button from '../../controls/button/button';
 import IconSearch from '../../icons/search';
 
 const namespace = 'app__multi-select-filter';
@@ -11,6 +12,7 @@ const MultiSelectFilter = ({}: IComponent) => (
     <Card>
       <p className={`${namespace}__subtitle`}>Product group</p>
       <Input icon={<IconSearch />} placeholder="Search..." />
+      <Button>Apply</Button>
     </Card>
   </div>
 );
