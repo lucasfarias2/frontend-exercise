@@ -16,10 +16,14 @@ declare global {
     __PRELOADED_STATE__: object;
   };
 
+  export interface IInitialState {
+    data: string[];
+  }
+
   export interface IComponent {
     children?: React.ReactNode;
     className?: string;
-    initialState?: object;
+    initialState?: IInitialState;
     deviceType?: string;
   }
 

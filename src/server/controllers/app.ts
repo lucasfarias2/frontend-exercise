@@ -5,7 +5,7 @@ import AppMobile from '../../shared/views/app.mobile';
 
 const fetch = async (_req: IRequest, res: IResponse, next: NextFunction) => {
   try {
-    res.locals.initialState = itemService.fetchItems();
+    res.locals.initialState = await itemService.fetchItems();
   } catch (e) {
     // tslint:disable-next-line: no-console
     console.error(e);

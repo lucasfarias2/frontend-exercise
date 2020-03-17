@@ -8,4 +8,31 @@
   &__subtitle {
     margin-top: 0;
   }
+
+  &__items {
+    height: 400px;
+    overflow: scroll;
+    margin: 24px 0;
+
+    &__item:first-child {
+      margin: 0;
+    }
+
+    &__item {
+      display: flex;
+      margin: 16px 0;
+
+      &__text {
+        flex-basis: 100%;
+        margin-left: 14px;
+      }
+
+      &__checkbox {
+        background-color: #fff;
+        border: 1px solid #d3d2ce;
+        height: 18px;
+        width: 18px;
+      }
+    }
+  }
 }
