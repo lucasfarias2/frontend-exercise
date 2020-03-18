@@ -36,3 +36,6 @@ TODO:
 - unify css to variables
 - filter from input
 - check browsers and production ready
+- local storage service
+- better componetization of multi select
+- apply with enter

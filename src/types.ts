@@ -30,6 +30,6 @@ declare global {
 
   export interface IAction {
     type: string;
-    payload: { item: string };
+    payload: { item: string; filter: string };
   }
 }

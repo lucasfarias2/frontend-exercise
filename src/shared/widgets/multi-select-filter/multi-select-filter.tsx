@@ -4,21 +4,38 @@ import Card from '../../controls/card/card';
 import Input from '../../controls/input/input';
 import Button from '../../controls/button/button';
 import IconSearch from '../../icons/search';
+import IconTrashCan from '../../icons/trash';
 import renderHtml from '../../utils/render-html';
 
 const namespace = 'app__multi-select-filter';
 
-const MultiSelectFilter = ({ data, getSelectedItems, removeItem, selectedItems, selectItem }: IMultiSelectFilter) => {
+const MultiSelectFilter = ({
+  clearSelectedItems,
+  data,
+  filter,
+  getSelectedItems,
+  removeItem,
+  selectedItems,
+  selectItem,
+  setItemsFilter,
+}: IMultiSelectFilter) => {
+  const [inputValue, setInputValue] = React.useState('');
+
   React.useEffect(() => {
     getSelectedItems();
   }, []);
+
+  const handleOnChange = (e: any) => {
+    e.preventDefault();
+    setInputValue(e.target.value);
+  };
 
   return (
     <div className={namespace}>
       <h2 className={`${namespace}__title`}>Multi-Select Filter</h2>
       <Card>
-        <p className={`${namespace}__subtitle`}>Product group</p>
-        <Input icon={<IconSearch />} placeholder="Search..." />
+        <p className={`${namespace}__subtitle`}>Product group: {filter}</p>
+        <Input value={inputValue} onChange={handleOnChange} icon={<IconSearch />} placeholder="Search..." />
         <div className={`${namespace}__items`}>
           {selectedItems.map((item: string) => {
             return (
@@ -38,6 +55,10 @@ const MultiSelectFilter = ({ data, getSelectedItems, removeItem, selectedItems, 
             );
           })}
           {data
+            .filter(item => {
+              if (!filter) return true;
+              return item.toLowerCase().includes(filter);
+            })
             .filter(item => !selectedItems.includes(item))
             .map((item: string) => {
               return (
@@ -48,7 +69,14 @@ const MultiSelectFilter = ({ data, getSelectedItems, removeItem, selectedItems, 
               );
             })}
         </div>
-        <Button>Apply</Button>
+        <div className={`${namespace}__buttons`}>
+          <Button className={`${namespace}__buttons__apply`} onClick={() => setItemsFilter(inputValue)}>
+            Apply
+          </Button>
+          <Button className={`${namespace}__buttons__clear`} onClick={() => clearSelectedItems()}>
+            <IconTrashCan className={`${namespace}__buttons__trash-icon`} />
+          </Button>
+        </div>
       </Card>
     </div>
   );
@@ -56,10 +84,13 @@ const MultiSelectFilter = ({ data, getSelectedItems, removeItem, selectedItems, 
 
 interface IMultiSelectFilter {
   data: string[];
+  filter?: string;
   selectedItems: string[];
   selectItem?: (item: string) => {};
   removeItem?: (item: string) => {};
+  setItemsFilter?: (filter: string) => {};
   getSelectedItems?: () => {};
+  clearSelectedItems?: () => {};
 }
 
 export default MultiSelectFilter;

@@ -49,4 +49,24 @@
       }
     }
   }
+
+  &__buttons {
+    display: flex;
+
+    &__apply {
+      flex: 8;
+    }
+
+    &__clear {
+      flex: 1;
+      margin-left: 8px;
+      width: 40px;
+    }
+
+    &__trash-icon {
+      width: 14px;
+      fill: white;
+      vertical-align: middle;
+    }
+  }
 }
