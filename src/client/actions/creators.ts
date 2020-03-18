@@ -1,14 +1,14 @@
 import { SELECT_ITEM, REMOVE_ITEM, GET_SELECTED_ITEMS, CLEAR_SELECTED_ITEMS, SET_ITEMS_FILTER } from './types';
 import { Dispatch } from 'redux';
 
-export const selectItem = async (dispatch: Dispatch, item: string) => {
+export const selectItem = async (dispatch: Dispatch, item: TItem) => {
   return dispatch({
     type: SELECT_ITEM,
     payload: { item },
   });
 };
 
-export const removeItem = async (dispatch: Dispatch, item: string) => {
+export const removeItem = async (dispatch: Dispatch, item: TItem) => {
   return dispatch({
     type: REMOVE_ITEM,
     payload: { item },
@@ -27,7 +27,7 @@ export const clearSelectedItems = async (dispatch: Dispatch) => {
   });
 };
 
-export const setItemsFilter = async (dispatch: Dispatch, filter: string) => {
+export const setItemsFilter = async (dispatch: Dispatch, filter: TFilter) => {
   return dispatch({
     type: SET_ITEMS_FILTER,
     payload: { filter },

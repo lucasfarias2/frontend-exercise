@@ -6,6 +6,7 @@ Front-end exercise for bol.com
 
 - Node 12.10.0 (use nvm)
 - React
+- Redux
 - Express
 - Typescript
 - Webpack
@@ -39,3 +40,4 @@ TODO:
 - local storage service
 - better componetization of multi select
 - apply with enter
+- update readme with explanations and stack

@@ -12,7 +12,7 @@ declare global {
     };
   }
 
-  export type IWindow = typeof window & {
+  export type TWindow = typeof window & {
     __PRELOADED_STATE__: object;
   };
 
@@ -32,4 +32,9 @@ declare global {
     type: string;
     payload: { item: string; filter: string };
   }
+
+  export type TItem = string;
+  export type TFilter = string;
+  export type TSelectedItems = TItem[];
+  export type TData = TItem[];
 }

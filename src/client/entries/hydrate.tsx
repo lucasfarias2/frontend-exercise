@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-declare var window: IWindow;
+declare var window: TWindow;
 
 const props = window.__PRELOADED_STATE__;
 
