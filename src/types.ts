@@ -34,7 +34,7 @@ declare global {
 
   export interface IAction {
     type: string;
-    payload: { item: TItem; filter: TFilter };
+    payload?: { item?: TItem; filter?: TFilter };
   }
 
   export interface IState {

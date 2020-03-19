@@ -16,8 +16,8 @@
     "watch:server": "webpack --config webpack.config.server.ts --mode development -w",
     "watch": "concurrently \"yarn watch:client\" \"yarn watch:server\"",
     "lint": "tslint --project tsconfig.json",
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "test": "jest --collectCoverage",
+    "test:watch": "jest --watch --collectCoverage"
   },
   "dependencies": {
     "@babel/preset-env": "^7.8.7",
@@ -34,6 +34,7 @@
     "@types/react-redux": "^7.1.7",
     "@types/react-side-effect": "^1.1.1",
     "@types/redux-logger": "^3.0.7",
+    "@types/redux-mock-store": "^1.0.2",
     "@types/serialize-javascript": "^1.5.0",
     "@types/webpack": "^4.41.7",
     "@types/webpack-node-externals": "^1.7.1",
@@ -49,7 +50,9 @@
     "react-redux": "^7.2.0",
     "react-side-effect": "^2.1.0",
     "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
     "sass-loader": "^8.0.2",
     "serialize-javascript": "^3.0.0",

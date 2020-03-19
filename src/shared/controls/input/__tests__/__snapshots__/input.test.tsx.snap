@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> renders correctly 1`] = `
+<div>
+  <div
+    class="ui__input"
+  >
+    <i
+      class="ui__input__icon"
+    />
+    <input
+      class="ui__input__bar"
+      placeholder="test"
+      value="test"
+    />
+  </div>
+</div>
+`;
