@@ -17,7 +17,30 @@ Front-end exercise for bol.com
 
 ## Scaffolding information
 
-- `./build` -> Server side bundles files
+- `/assets` -> Assets you provided
+- `/build` -> Server side bundles files
+- `/static` -> Client side bundles files
+- `/src` -> Main app src folder
+
+  - `/client` -> Client side files
+
+    - `/actions` -> Redux Actions
+    - `/entries` -> Webpack entry points / React Hydrates
+    - `/reducers` -> Redux Reducers
+    - `/services` -> Client side services like LocalStorage handler
+
+  - `/server` -> Server side files
+
+    - `/controllers` -> Server controllers. To handle fetch and render.
+    - `/middlewares` -> Middlewares like device detection, render methods, etc.
+    - `/services` -> Services to fetch server side.
+
+  - `/shared` -> Client & Server side files. (Isomorphic)
+    - `/controls` -> UI controls components
+    - `/icons` -> UI Icon
+    - `/utils` -> Some tools
+    - `/views` -> View Components used by Hydrates and Render To Strings.
+    - `/widgets` -> Segments of the UI with some specific business logic and purpose.
 
 ## Development guide
 
