@@ -13,7 +13,7 @@ const Input = ({ icon, onChange, placeholder, value }: IInput) => {
 
 interface IInput {
   icon?: React.ReactNode;
-  onChange?: any;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   value?: string;
 }

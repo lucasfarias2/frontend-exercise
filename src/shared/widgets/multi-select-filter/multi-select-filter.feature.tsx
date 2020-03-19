@@ -15,13 +15,13 @@ const mapStateToProps = (state: IMultiSelectFilterFeature) => {
 
 const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
-    selectItem: (item: string) => {
+    selectItem: (item: TItem) => {
       selectItem(dispatch, item);
     },
-    removeItem: (item: string) => {
+    removeItem: (item: TItem) => {
       removeItem(dispatch, item);
     },
-    setItemsFilter: (filter: string) => {
+    setItemsFilter: (filter: TFilter) => {
       setItemsFilter(dispatch, filter);
     },
     getSelectedItems: () => {
@@ -34,9 +34,9 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
 };
 
 interface IMultiSelectFilterFeature {
-  data: string[];
-  filter?: string;
-  selectedItems: string[];
+  data: TData;
+  filter?: TFilter;
+  selectedItems: TSelectedItems;
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MultiSelectFilter);

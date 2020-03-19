@@ -1,10 +1,10 @@
 import withSideEffect from 'react-side-effect';
 
-const Script = (props: { src: string }): null => null;
+const Script = (props: IScript): null => null;
 
-const reducePropsToState = (propsList: any) => {
+const reducePropsToState = (propsList: IScript[]) => {
   const scripts: string[] = [];
-  propsList.forEach((props: any) => {
+  propsList.forEach((props: IScript) => {
     if (props.children) {
       scripts.push(`<script>${props.children}</script>`);
     } else {
@@ -14,14 +14,11 @@ const reducePropsToState = (propsList: any) => {
   return scripts.join('');
 };
 
-const handleStateChangeOnClient = (propsList: any) => {
+export default withSideEffect(reducePropsToState, () => {
   return;
-};
+})(Script);
 
-export default withSideEffect(
-  reducePropsToState,
-  handleStateChangeOnClient
-)(
-  // @ts-ignore
-  Script
-);
+interface IScript {
+  src?: string;
+  children?: string;
+}

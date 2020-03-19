@@ -10,7 +10,7 @@ const Button = ({ className, children, type, onClick }: IButton) => (
 );
 
 interface IButton extends IComponent {
-  onClick?: (e: any) => void;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   type?: 'button' | 'submit' | 'reset';
 }
 

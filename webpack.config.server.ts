@@ -1,4 +1,4 @@
-import nodeExternals from 'webpack-node-externals'
+import nodeExternals from 'webpack-node-externals';
 
 export default {
   entry: './src/index.ts',

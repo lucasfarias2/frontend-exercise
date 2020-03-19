@@ -1,6 +1,14 @@
 import express from 'express';
 
 declare global {
+  export type TItem = string;
+  export type TFilter = string;
+  export type TSelectedItems = TItem[];
+  export type TData = TItem[];
+  export type TWindow = typeof window & {
+    __PRELOADED_STATE__: object;
+  };
+
   export interface IResponse extends express.Response {
     renderView: (View: React.FunctionComponent, props?: any) => void;
   }
@@ -12,13 +20,9 @@ declare global {
     };
   }
 
-  export type TWindow = typeof window & {
-    __PRELOADED_STATE__: object;
-  };
-
   export interface IInitialState {
-    data: string[];
-    selectedItems: string[];
+    data: TData;
+    selectedItems: TSelectedItems;
   }
 
   export interface IComponent {
@@ -30,11 +34,12 @@ declare global {
 
   export interface IAction {
     type: string;
-    payload: { item: string; filter: string };
+    payload: { item: TItem; filter: TFilter };
   }
 
-  export type TItem = string;
-  export type TFilter = string;
-  export type TSelectedItems = TItem[];
-  export type TData = TItem[];
+  export interface IState {
+    data: TData;
+    selectedItems?: TSelectedItems;
+    filter: TFilter;
+  }
 }

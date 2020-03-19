@@ -30,28 +30,28 @@ const MultiSelectFilter = ({
     getSelectedItems();
   }, []);
 
-  const handleOnChange = (e: any) => {
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setInputValue(e.target.value);
   };
 
-  const handleOnSubmit = (e: any) => {
+  const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if ((!filter && !inputValue) || inputValue === filter) return;
     setItemsFilter(inputValue);
   };
 
-  const handleOnClearItems = (e: any) => {
+  const handleOnClearItems = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     clearSelectedItems();
   };
 
-  const handleOnSelectItem = (item: TItem) => (e: any) => {
+  const handleOnSelectItem = (item: TItem) => (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     selectItem(item);
   };
 
-  const handleOnRemoveItem = (item: TItem) => (e: any) => {
+  const handleOnRemoveItem = (item: TItem) => (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     removeItem(item);
   };
@@ -71,7 +71,7 @@ const MultiSelectFilter = ({
             placeholder={TEXT_SEARCH_PLACEHOLDER}
           />
           <div className={`${namespace}__items`}>
-            {selectedItems.map((item: string) => {
+            {selectedItems.map((item: TItem) => {
               return (
                 <div className={`${namespace}__items__item`} key={item} onClick={handleOnRemoveItem(item)}>
                   <div
@@ -92,9 +92,9 @@ const MultiSelectFilter = ({
               );
             })}
             {data
-              .filter(item => (!filter ? true : item.toLowerCase().includes(filter)))
+              .filter(item => (!filter ? true : item.toLowerCase().includes(filter.toLowerCase())))
               .filter(item => !selectedItems.includes(item))
-              .map((item: string) => {
+              .map((item: TItem) => {
                 return (
                   <div className={`${namespace}__items__item`} key={item} onClick={handleOnSelectItem(item)}>
                     <div className={classNames(`${namespace}__items__item__checkbox`)} />

@@ -1,23 +1,19 @@
 import withSideEffect from 'react-side-effect';
 
-const Style = (props: { src: string }): null => null;
+const Style = (props: IStyle): null => null;
 
-const reducePropsToState = (propsList: any) => {
+const reducePropsToState = (propsList: IStyle[]) => {
   const styles: string[] = [];
-  propsList.forEach((props: any) => {
+  propsList.forEach((props: IStyle) => {
     styles.push(`<link rel="stylesheet" type="text/css" href="/static/${props.src}.css">`);
   });
   return styles.join('');
 };
 
-const handleStateChangeOnClient = (propsList: any) => {
+export default withSideEffect(reducePropsToState, () => {
   return;
-};
+})(Style);
 
-export default withSideEffect(
-  reducePropsToState,
-  handleStateChangeOnClient
-)(
-  // @ts-ignore
-  Style
-);
+interface IStyle {
+  src: string;
+}

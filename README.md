@@ -27,17 +27,9 @@ Front-end exercise for bol.com
 5. Run `yarn start` to start the server on port 8080
 6. Access the application at `http://localhost:8080`
 
-
 TODO:
-- check sourcemaps
+
 - clean dependencies to dev dependencies
-- remove remaining "any" types
-- remove ts ignores
 - add unit tests for reducers, actions, components, utils, etc
-- unify css to variables
-- filter from input
 - check browsers and production ready
-- local storage service
-- better componetization of multi select
-- apply with enter
 - update readme with explanations and stack
