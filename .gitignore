@@ -2,3 +2,4 @@
 /static
 /build
 *.log
+/coverage
