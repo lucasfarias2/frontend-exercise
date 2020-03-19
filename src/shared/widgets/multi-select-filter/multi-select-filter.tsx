@@ -73,7 +73,12 @@ const MultiSelectFilter = ({
           <div className={`${namespace}__items`}>
             {selectedItems.map((item: TItem) => {
               return (
-                <div className={`${namespace}__items__item`} key={item} onClick={handleOnRemoveItem(item)}>
+                <div
+                  data-testid={item}
+                  className={`${namespace}__items__item`}
+                  key={item}
+                  onClick={handleOnRemoveItem(item)}
+                >
                   <div
                     className={classNames(
                       `${namespace}__items__item__checkbox`,
@@ -96,7 +101,12 @@ const MultiSelectFilter = ({
               .filter(item => !selectedItems.includes(item))
               .map((item: TItem) => {
                 return (
-                  <div className={`${namespace}__items__item`} key={item} onClick={handleOnSelectItem(item)}>
+                  <div
+                    data-testid={item}
+                    className={`${namespace}__items__item`}
+                    key={item}
+                    onClick={handleOnSelectItem(item)}
+                  >
                     <div className={classNames(`${namespace}__items__item__checkbox`)} />
                     <span className={`${namespace}__items__item__text`}>{renderHtml(item)}</span>
                   </div>
@@ -104,10 +114,10 @@ const MultiSelectFilter = ({
               })}
           </div>
           <div className={`${namespace}__buttons`}>
-            <Button type="submit" className={`${namespace}__buttons__apply`}>
+            <Button testId="button_apply" type="submit" className={`${namespace}__buttons__apply`}>
               {TEXT_APPLY}
             </Button>
-            <Button className={`${namespace}__buttons__clear`} onClick={handleOnClearItems}>
+            <Button testId="button_clear" className={`${namespace}__buttons__clear`} onClick={handleOnClearItems}>
               <IconTrashCan className={`${namespace}__buttons__trash-icon`} />
             </Button>
           </div>

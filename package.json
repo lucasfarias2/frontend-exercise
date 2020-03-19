@@ -15,11 +15,18 @@
     "watch:client": "webpack --config webpack.config.client.ts --mode development -w",
     "watch:server": "webpack --config webpack.config.server.ts --mode development -w",
     "watch": "concurrently \"yarn watch:client\" \"yarn watch:server\"",
-    "lint": "tslint --project tsconfig.json"
+    "lint": "tslint --project tsconfig.json",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "@testing-library/jest-dom": "^5.1.1",
+    "@testing-library/react": "^10.0.1",
     "@types/classnames": "^2.2.10",
     "@types/express": "^4.17.3",
+    "@types/jest": "^25.1.4",
     "@types/mini-css-extract-plugin": "^0.9.1",
     "@types/node": "^13.9.1",
     "@types/react": "^16.9.23",
@@ -34,6 +41,7 @@
     "classnames": "^2.2.6",
     "css-loader": "^3.4.2",
     "express": "^4.17.1",
+    "jest": "^25.1.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
@@ -46,6 +54,7 @@
     "sass-loader": "^8.0.2",
     "serialize-javascript": "^3.0.0",
     "source-map-loader": "^0.2.4",
+    "ts-jest": "^25.2.1",
     "ts-loader": "^6.2.1",
     "ts-node": "^8.6.2",
     "tslint": "^6.1.0",
@@ -57,6 +66,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.8.3",
     "concurrently": "^5.1.0"
   }
 }
