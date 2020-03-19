@@ -58,6 +58,11 @@ Front-end exercise for bol.com
 
 ## Screenshots
 
+|Mobile|Desktop|
+|--|--|
+|![mobile](https://i.imgur.com/vQd7uzR.png)|![desktop](https://i.imgur.com/wwQWnnL.png)|
+|--|--|
+
 ## More Info
 
 - I definitely wouldn't use this complex architecture just to make a Multi-Select component. The whole purpose is to show how I would manage a new scalable front-end stack architecture from the ground.
